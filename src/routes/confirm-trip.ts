@@ -4,8 +4,9 @@ import z from "zod";
 import nodemailer from "nodemailer";
 
 import { prisma } from "../lib/prisma";
-import dayjs from "dayjs";
 import { getEmailClient } from "../lib/mail";
+import { dayjs } from "../lib/dayjs";
+import { ClientError } from "../errors/client-error";
 
 export async function confirmTrip(app: FastifyInstance) {
   app.withTypeProvider<ZodTypeProvider>().get(
@@ -34,7 +35,7 @@ export async function confirmTrip(app: FastifyInstance) {
       });
 
       if (!trip) {
-        throw new Error("trip not found.");
+        throw new ClientError("trip not found.");
       }
 
       if (trip.is_confirmed) {
