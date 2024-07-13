@@ -29,6 +29,8 @@ Este projeto aborda o uso de algumas ferramentas de desenvolvimento back-end uti
 
 - Após clonar o repositório, é necessário possuir um arquivo `.env` para definir os valores de variáveis ambiente que serão usadas na aplicação.
 
+  ![code](https://github.com/user-attachments/assets/804f5522-cb43-4a05-8a7b-425a07ea897c)
+
 1. `DATABASE_URL: DATABASE_URL="file:./dev.db"`
    Esta variável define a URL de conexão ao banco de dados.
 
